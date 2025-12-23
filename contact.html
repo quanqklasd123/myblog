@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Blog Lập Trình</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/social.css">
+</head>
+<body>
+    <header>
+        <h1>Liên Hệ Với Tôi</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Trang Chủ</a>
+        <a href="java.html">Java</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="about.html">Giới Thiệu</a>
+        <a href="contact.html" style="background-color: #2c3e50; border-radius: 4px;">Liên Hệ</a>
+    </nav>
+
+    <div class="container">
+        <section class="contact-section">
+            <h2>Gửi tin nhắn cho tôi</h2>
+            <p>Nếu bạn có bất kỳ câu hỏi nào hoặc muốn hợp tác, đừng ngần ngại liên hệ!</p>
+            
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Họ và Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Nội dung:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Gửi Tin Nhắn</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:your.email@gmail.com" title="Gmail"><i class="fab fa-google"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

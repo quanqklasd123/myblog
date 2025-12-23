@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Lập Trình Java & JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/social.css">
+</head>
+<body>
+    <header>
+        <h1>Chào Mừng Đến Với Blog Lập Trình</h1>
+        <p>Nơi chia sẻ kiến thức và đam mê</p>
+    </header>
+
+    <nav>
+        <a href="index.html" style="background-color: #2c3e50; border-radius: 4px;">Trang Chủ</a>
+        <a href="java.html">Java</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="about.html">Giới Thiệu</a>
+        <a href="contact.html">Liên Hệ</a>
+    </nav>
+
+    <div class="container">
+        <!-- Slider Section -->
+        <div class="slider-container">
+            <div class="slide fade">
+                <div class="slide-content java-slide">
+                    <h2>Java - Mạnh Mẽ & Bền Bỉ</h2>
+                    <p>Ngôn ngữ lập trình hướng đối tượng phổ biến nhất thế giới. Được sử dụng rộng rãi trong các hệ thống doanh nghiệp lớn, ứng dụng Android và Big Data.</p>
+                    <a href="java.html"><button>Khám Phá Java</button></a>
+                </div>
+            </div>
+
+            <div class="slide fade">
+                <div class="slide-content js-slide">
+                    <h2>JavaScript - Linh Hoạt & Hiện Đại</h2>
+                    <p>Ngôn ngữ của Web. Từ Frontend tương tác đến Backend mạnh mẽ với Node.js. JavaScript là chìa khóa để xây dựng các ứng dụng web hiện đại.</p>
+                    <a href="javascript.html"><button>Khám Phá JavaScript</button></a>
+                </div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:your.email@gmail.com" title="Gmail"><i class="fab fa-google"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
