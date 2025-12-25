@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>1. DOM & Virtual DOM: Hiểu Để Tối Ưu React/Vue</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="blog-header" style="background:#2e3d4b;padding:60px 0 0 0;text-align:center;">
+        <h1 style="color:#fff;font-size:3em;font-weight:700;margin:0 0 18px 0;letter-spacing:-1px;">Kho Tàng Kiến Thức</h1>
+        <p style="color:#e0e0e0;font-size:1.3em;margin:0 0 40px 0;">Tổng hợp bài viết về Java và JavaScript</p>
+        <div style="background:#384b5c;padding:40px 0 50px 0;">
+            <nav style="display:flex;justify-content:center;gap:60px;align-items:center;">
+                <a href="../index.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Trang Chủ</a>
+                <a href="../blogs.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;background:#2c3e50;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,62,80,0.08);">Blogs</a>
+                <a href="../projects.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Dự Án Cá Nhân</a>
+                <a href="../contact.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+    <article class="blog-detail">
+        <h1>1. DOM & Virtual DOM: Hiểu Để Tối Ưu React/Vue</h1>
+        <p><em>Ngày đăng: 23/12/2025 | Chủ đề: JavaScript Basic</em></p>
+        <section>
+            <p>Thao tác DOM (Document Object Model) là một trong những tác vụ tốn kém nhất về hiệu năng trong trình duyệt.</p>
+            <h3>Reflow và Repaint</h3>
+            <ul>
+                <li><strong>Reflow (Layout):</strong> Trình duyệt tính toán lại vị trí và kích thước của các phần tử. Xảy ra khi thay đổi layout (width, height, margin...). Rất tốn kém!</li>
+                <li><strong>Repaint:</strong> Trình duyệt vẽ lại các pixel. Xảy ra khi thay đổi màu sắc, visibility... Nhẹ hơn Reflow nhưng vẫn tốn.</li>
+            </ul>
+            <h3>Tại sao cần Virtual DOM (React/Vue)?</h3>
+            <p>Thay vì thao tác trực tiếp lên DOM thật mỗi khi dữ liệu thay đổi, các framework hiện đại sử dụng Virtual DOM (một bản sao của DOM trong bộ nhớ).</p>
+            <ol>
+                <li>Thay đổi xảy ra trên Virtual DOM.</li>
+                <li>Thuật toán "Diffing" so sánh Virtual DOM mới và cũ để tìm ra sự khác biệt tối thiểu.</li>
+                <li>Chỉ cập nhật những phần thay đổi đó lên DOM thật (Batch update).</li>
+            </ol>
+            <p>Điều này giảm thiểu số lần Reflow/Repaint, tăng mượt mà cho UI.</p>
+        </section>
+    </article>
+</body>
+</html>

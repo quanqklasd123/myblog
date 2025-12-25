@@ -10,13 +10,46 @@ document.addEventListener('DOMContentLoaded', function() {
     dateElement.style.color = '#bdc3c7';
     footer.appendChild(dateElement);
 
-    // Chức năng cho nút "Đọc thêm" (giả lập)
-    const readMoreButtons = document.querySelectorAll('.read-more-btn');
-    readMoreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            alert('Cảm ơn bạn đã quan tâm! Tính năng xem chi tiết bài viết đang được phát triển.');
-        });
-    });
+    // Render Blog Posts from Data
+    if (typeof blogData !== 'undefined') {
+        const javaContainer = document.getElementById('java-posts');
+        const jsContainer = document.getElementById('javascript-posts');
+
+        function createPostElement(post, type) {
+            const article = document.createElement('article');
+            article.className = 'blog-post';
+            // Xác định đường dẫn file chi tiết
+            let detailPath = '';
+            if (type === 'java') {
+                detailPath = `blogdata/java-${post.id}.html`;
+            } else if (type === 'javascript') {
+                detailPath = `blogdata/js-${post.id}.html`;
+            }
+            article.innerHTML = `
+                <h2>${post.title}</h2>
+                <div class="meta">Đăng ngày: ${post.date} | Chủ đề: ${post.topic}</div>
+                <p>${post.description}</p>
+                <a class="read-more-link" href="${detailPath}">Đọc thêm</a>
+            `;
+            return article;
+        }
+
+        if (javaContainer && blogData.java) {
+            javaContainer.innerHTML = ''; // Clear existing content if any
+            blogData.java.forEach(post => {
+                javaContainer.appendChild(createPostElement(post, 'java'));
+            });
+        }
+
+        if (jsContainer && blogData.javascript) {
+            jsContainer.innerHTML = ''; // Clear existing content if any
+            blogData.javascript.forEach(post => {
+                jsContainer.appendChild(createPostElement(post, 'javascript'));
+            });
+        }
+    }
+
+    // Modal Logic đã bị loại bỏ vì chuyển sang trang mới
 
     // Slider Logic
     let slideIndex = 1;

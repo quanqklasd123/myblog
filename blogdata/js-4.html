@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>4. Closures & Currying: Kỹ Thuật Của Senior JS Dev</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="blog-header" style="background:#2e3d4b;padding:60px 0 0 0;text-align:center;">
+        <h1 style="color:#fff;font-size:3em;font-weight:700;margin:0 0 18px 0;letter-spacing:-1px;">Kho Tàng Kiến Thức</h1>
+        <p style="color:#e0e0e0;font-size:1.3em;margin:0 0 40px 0;">Tổng hợp bài viết về Java và JavaScript</p>
+        <div style="background:#384b5c;padding:40px 0 50px 0;">
+            <nav style="display:flex;justify-content:center;gap:60px;align-items:center;">
+                <a href="../index.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Trang Chủ</a>
+                <a href="../blogs.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;background:#2c3e50;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,62,80,0.08);">Blogs</a>
+                <a href="../projects.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Dự Án Cá Nhân</a>
+                <a href="../contact.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+    <article class="blog-detail">
+        <h1>4. Closures & Currying: Kỹ Thuật Của Senior JS Dev</h1>
+        <p><em>Ngày đăng: 20/12/2025 | Chủ đề: JavaScript Advanced</em></p>
+        <section>
+            <h3>Memoization với Closure</h3>
+            <p>Tối ưu hiệu năng bằng cách ghi nhớ kết quả của các hàm tính toán nặng.</p>
+            <pre><code>function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        const key = JSON.stringify(args);
+        if (cache[key]) {
+            return cache[key];
+        }
+        const result = fn.apply(this, args);
+        cache[key] = result;
+        return result;
+    }
+}</code></pre>
+            <h3>Currying</h3>
+            <p>Biến đổi hàm nhiều tham số thành chuỗi các hàm một tham số. Giúp tái sử dụng code và tạo ra các hàm cấu hình sẵn (partial application).</p>
+            <pre><code>const multiply = (a) => (b) => a * b;
+const double = multiply(2); // Tạo hàm nhân đôi
+console.log(double(5)); // 10</code></pre>
+        </section>
+    </article>
+    <a href="../blogs.html">← Quay lại danh sách blog</a>
+</body>
+</html>

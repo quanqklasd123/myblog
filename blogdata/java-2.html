@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>2. Java Collections Framework: Tối Ưu Hóa Hiệu Năng</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="blog-header" style="background:#2e3d4b;padding:60px 0 0 0;text-align:center;">
+        <h1 style="color:#fff;font-size:3em;font-weight:700;margin:0 0 18px 0;letter-spacing:-1px;">Kho Tàng Kiến Thức</h1>
+        <p style="color:#e0e0e0;font-size:1.3em;margin:0 0 40px 0;">Tổng hợp bài viết về Java và JavaScript</p>
+        <div style="background:#384b5c;padding:40px 0 50px 0;">
+            <nav style="display:flex;justify-content:center;gap:60px;align-items:center;">
+                <a href="../index.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Trang Chủ</a>
+                <a href="../blogs.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;background:#2c3e50;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,62,80,0.08);">Blogs</a>
+                <a href="../projects.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Dự Án Cá Nhân</a>
+                <a href="../contact.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+    <article class="blog-detail">
+        <h1>2. Java Collections Framework: Tối Ưu Hóa Hiệu Năng</h1>
+        <p><em>Ngày đăng: 22/12/2025 | Chủ đề: Java Core</em></p>
+        <section>
+            <p>Chọn sai cấu trúc dữ liệu có thể giết chết hiệu năng ứng dụng của bạn. Hãy cùng phân tích sâu hơn.</p>
+            <h3>List: ArrayList vs. LinkedList</h3>
+            <ul>
+                <li><strong>ArrayList:</strong> Dựa trên mảng động. Truy cập ngẫu nhiên (get) cực nhanh O(1). Thêm/xóa ở cuối nhanh, nhưng ở giữa/đầu thì chậm O(n) do phải dịch chuyển phần tử. <em>Dùng cho 90% trường hợp.</em></li>
+                <li><strong>LinkedList:</strong> Dựa trên danh sách liên kết đôi. Thêm/xóa cực nhanh O(1) nếu đã có reference. Truy cập ngẫu nhiên chậm O(n). <em>Chỉ dùng khi thêm/xóa nhiều ở đầu/giữa list.</em></li>
+            </ul>
+            <h3>Set & Map: Hashing là chìa khóa</h3>
+            <p><code>HashSet</code> và <code>HashMap</code> hoạt động dựa trên <code>hashCode()</code> và <code>equals()</code>. Nếu bạn dùng custom object làm key, hãy chắc chắn override 2 method này đúng cách để tránh Memory Leak hoặc mất dữ liệu.</p>
+            <p>Độ phức tạp trung bình cho add/remove/contains là O(1). Tuy nhiên, trong trường hợp xấu nhất (hash collision), nó có thể tệ xuống O(n) (hoặc O(log n) từ Java 8 trở đi do sử dụng Red-Black Tree).</p>
+            <h3>Concurrent Collections</h3>
+            <p>Trong môi trường đa luồng, đừng dùng <code>ArrayList</code> hay <code>HashMap</code>. Hãy dùng:</p>
+            <ul>
+                <li><code>CopyOnWriteArrayList</code>: Tốt cho việc đọc nhiều, ghi ít.</li>
+                <li><code>ConcurrentHashMap</code>: Thread-safe map với hiệu năng cao nhờ cơ chế lock striping (chia nhỏ lock).</li>
+            </ul>
+        </section>
+    </article>
+    <a href="../blogs.html">← Quay lại danh sách blog</a>
+</body>
+</html>
