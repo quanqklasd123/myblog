@@ -20,27 +20,7 @@
     color: #b0b0b0;
 }
 
-.blog-header nav {
-    background-color: #2d2d2d;
-    padding: 0.5rem 0 0.5rem 0;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.blog-header nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 5px;
-    display: inline-block;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.blog-header nav a:hover {
-    background-color: #4a4a4a;
-}
+/* Các quy tắc nav sẽ được định nghĩa tập trung ở phần dưới */
 
 /* Read More Button Style */
 .read-more-link {
@@ -218,21 +198,61 @@ header h1 {
 
 nav {
     background-color: #2d2d2d;
-    padding: 0.5rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    /* Tab kéo dài lấp đầy chiều cao nav */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-bottom: 2px solid #1a1a1a;
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 5px;
-    display: inline-block;
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 18px 20px;
+    display: flex;
+    /* Thay inline-flex để flex: 1 hoạt động */
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 !important;
+    position: relative;
+    flex: 1;
+    /* Mỗi tab chiếm đều không gian - 25% mỗi tab */
+    text-align: center;
 }
 
+/* Tạo gạch chân bằng ::after */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hiệu ứng hover cho tất cả các tab */
 nav a:hover {
-    background-color: #4a4a4a;
-    border-radius: 4px;
+    background-color: #1a1a1a;
+}
+
+nav a:hover::after {
+    background-color: #fff;
+}
+
+/* Hiệu ứng active tab - giống hệt hover */
+nav a.active-tab {
+    background-color: #1a1a1a;
+}
+
+nav a.active-tab::after {
+    background-color: #fff;
 }
 
 .container {
