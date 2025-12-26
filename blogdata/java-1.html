@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <title>1. Lập trình hướng đối tượng (OOP) trong Java: Từ Cơ Bản Đến Nâng Cao</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <header class="blog-header" style="background:#2e3d4b;padding:60px 0 0 0;text-align:center;">
-        <h1 style="color:#fff;font-size:3em;font-weight:700;margin:0 0 18px 0;letter-spacing:-1px;">Kho Tàng Kiến Thức</h1>
-        <p style="color:#e0e0e0;font-size:1.3em;margin:0 0 40px 0;">Tổng hợp bài viết về Java và JavaScript</p>
-        <div style="background:#384b5c;padding:40px 0 50px 0;">
-            <nav style="display:flex;justify-content:center;gap:60px;align-items:center;">
-                <a href="../index.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Trang Chủ</a>
-                <a href="../blogs.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;background:#2c3e50;font-weight:700;box-shadow:0 2px 8px 0 rgba(44,62,80,0.08);">Blogs</a>
-                <a href="../projects.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Dự Án Cá Nhân</a>
-                <a href="../contact.html" style="color:#fff;text-decoration:none;font-size:1.3em;padding:12px 32px;border-radius:6px;transition:background 0.2s;">Liên Hệ</a>
+    <header class="blog-header" style="background:#1a1a1a;padding:1rem 0 0 0;text-align:center;">
+        <h1 style="color:#fff;margin:0;font-size:2em;">Kho Tàng Kiến Thức</h1>
+        <p style="color:#b0b0b0;margin:0 0 10px 0;font-size:1.1em;">Tổng hợp bài viết về Java và JavaScript</p>
+        <div style="background:#2d2d2d;padding:0.5rem 0;margin-top:10px;">
+            <nav style="text-align:center;">
+                <a href="../index.html"
+                    style="color:#fff;text-decoration:none;padding:0.5rem 1rem;margin:0 5px;display:inline-block;border-radius:4px;transition:background 0.2s;">Trang
+                    Chủ</a>
+                <a href="../blogs.html"
+                    style="color:#fff;text-decoration:none;padding:0.5rem 1rem;margin:0 5px;display:inline-block;border-radius:4px;transition:background 0.2s;">Blogs</a>
+                <a href="../projects.html"
+                    style="color:#fff;text-decoration:none;padding:0.5rem 1rem;margin:0 5px;display:inline-block;border-radius:4px;transition:background 0.2s;">Dự
+                    Án Cá Nhân</a>
+                <a href="../contact.html"
+                    style="color:#fff;text-decoration:none;padding:0.5rem 1rem;margin:0 5px;display:inline-block;border-radius:4px;transition:background 0.2s;">Liên
+                    Hệ</a>
             </nav>
         </div>
     </header>
@@ -22,9 +31,12 @@
         <h1>1. Lập trình hướng đối tượng (OOP) trong Java: Từ Cơ Bản Đến Nâng Cao</h1>
         <p><em>Ngày đăng: 23/12/2025 | Chủ đề: Java Core</em></p>
         <section>
-            <p>Lập trình hướng đối tượng (OOP) không chỉ là về Class và Object. Để trở thành một Senior Java Developer, bạn cần hiểu sâu sắc về cách thiết kế hệ thống linh hoạt và dễ bảo trì.</p>
+            <p>Lập trình hướng đối tượng (OOP) không chỉ là về Class và Object. Để trở thành một Senior Java Developer,
+                bạn cần hiểu sâu sắc về cách thiết kế hệ thống linh hoạt và dễ bảo trì.</p>
             <h3>1. Tính Đóng Gói (Encapsulation) & Data Hiding</h3>
-            <p>Không chỉ đơn giản là <code>private</code> fields và <code>public</code> getters/setters. Đóng gói thực sự là về việc bảo vệ <strong>invariant</strong> (bất biến) của đối tượng. Hãy suy nghĩ kỹ trước khi tạo setter cho mọi trường.</p>
+            <p>Không chỉ đơn giản là <code>private</code> fields và <code>public</code> getters/setters. Đóng gói thực
+                sự là về việc bảo vệ <strong>invariant</strong> (bất biến) của đối tượng. Hãy suy nghĩ kỹ trước khi tạo
+                setter cho mọi trường.</p>
             <pre><code>// Bad Practice
 public class BankAccount {
     public double balance;
@@ -40,19 +52,28 @@ public class BankAccount {
     }
 }</code></pre>
             <h3>2. Tính Kế Thừa (Inheritance) vs. Composition</h3>
-            <p>Kế thừa là một con dao hai lưỡi. "Favor Composition over Inheritance" (Ưu tiên Composition hơn Kế thừa) là một nguyên tắc quan trọng. Kế thừa tạo ra sự kết dính chặt chẽ (tight coupling), trong khi Composition mang lại sự linh hoạt.</p>
+            <p>Kế thừa là một con dao hai lưỡi. "Favor Composition over Inheritance" (Ưu tiên Composition hơn Kế thừa)
+                là một nguyên tắc quan trọng. Kế thừa tạo ra sự kết dính chặt chẽ (tight coupling), trong khi
+                Composition mang lại sự linh hoạt.</p>
             <h3>3. Tính Đa Hình (Polymorphism)</h3>
-            <p>Sức mạnh thực sự của Java nằm ở Runtime Polymorphism (Dynamic Binding). Điều này cho phép chúng ta viết code phụ thuộc vào Interface thay vì Implementation cụ thể, giúp hệ thống dễ mở rộng (Open/Closed Principle).</p>
+            <p>Sức mạnh thực sự của Java nằm ở Runtime Polymorphism (Dynamic Binding). Điều này cho phép chúng ta viết
+                code phụ thuộc vào Interface thay vì Implementation cụ thể, giúp hệ thống dễ mở rộng (Open/Closed
+                Principle).</p>
             <h3>4. SOLID Principles</h3>
             <ul>
-                <li><strong>S</strong>ingle Responsibility Principle (SRP): Một class chỉ nên có một lý do để thay đổi.</li>
+                <li><strong>S</strong>ingle Responsibility Principle (SRP): Một class chỉ nên có một lý do để thay đổi.
+                </li>
                 <li><strong>O</strong>pen/Closed Principle (OCP): Mở rộng thì dễ, sửa đổi thì hạn chế.</li>
-                <li><strong>L</strong>iskov Substitution Principle (LSP): Class con phải thay thế được class cha mà không làm hỏng chương trình.</li>
-                <li><strong>I</strong>nterface Segregation Principle (ISP): Chia nhỏ interface lớn thành nhiều interface nhỏ.</li>
-                <li><strong>D</strong>ependency Inversion Principle (DIP): Phụ thuộc vào abstraction, không phụ thuộc vào concrete class.</li>
+                <li><strong>L</strong>iskov Substitution Principle (LSP): Class con phải thay thế được class cha mà
+                    không làm hỏng chương trình.</li>
+                <li><strong>I</strong>nterface Segregation Principle (ISP): Chia nhỏ interface lớn thành nhiều interface
+                    nhỏ.</li>
+                <li><strong>D</strong>ependency Inversion Principle (DIP): Phụ thuộc vào abstraction, không phụ thuộc
+                    vào concrete class.</li>
             </ul>
         </section>
     </article>
     <a href="../blogs.html">← Quay lại danh sách blog</a>
 </body>
+
 </html>

@@ -20,17 +20,33 @@ document.addEventListener('DOMContentLoaded', function() {
             article.className = 'blog-post';
             // Xác định đường dẫn file chi tiết
             let detailPath = '';
+            let icon = '';
             if (type === 'java') {
                 detailPath = `blogdata/java-${post.id}.html`;
+                icon = '<i class="fab fa-java" style="color: #1a1a1a; margin-right: 8px;"></i>';
             } else if (type === 'javascript') {
                 detailPath = `blogdata/js-${post.id}.html`;
+                icon = '<i class="fab fa-js-square" style="color: #1a1a1a; margin-right: 8px;"></i>';
             }
             article.innerHTML = `
-                <h2>${post.title}</h2>
-                <div class="meta">Đăng ngày: ${post.date} | Chủ đề: ${post.topic}</div>
-                <p>${post.description}</p>
-                <a class="read-more-link" href="${detailPath}">Đọc thêm</a>
+                <h3 style="color: #1a1a1a; margin-bottom: 10px;">
+                    <a href="${detailPath}" style="color: #1a1a1a; text-decoration: none;">
+                        ${icon}${post.title}
+                    </a>
+                </h3>
+                <p class="meta">
+                    <i class="far fa-calendar"></i> ${post.date} | 
+                    <i class="fas fa-tag"></i> ${post.topic}
+                </p>
+                <p style="line-height: 1.7; text-align: justify;">${post.description}</p>
             `;
+            // Make the entire article clickable
+            article.style.cursor = 'pointer';
+            article.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'A') {
+                    window.location.href = detailPath;
+                }
+            });
             return article;
         }
 
